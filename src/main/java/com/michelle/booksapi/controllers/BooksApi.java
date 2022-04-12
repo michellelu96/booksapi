@@ -1,13 +1,12 @@
 package com.michelle.booksapi.controllers;
 
-import java.awt.print.Book;
-
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.michelle.booksapi.models.Book;
 import com.michelle.booksapi.services.BookService;
 
 
@@ -26,7 +25,7 @@ public class BooksApi {
     		@RequestParam(value="description") String desc, 
     		@RequestParam(value="language") String lang,
     		@RequestParam(value="pages") Integer numOfPages) {
-        Book book = bookService.updateBook(id, title, desc, lang, numOfPages);
+    		Book book = bookService.updateBook(id, title, desc, lang, numOfPages);
         return book;
     }
     
