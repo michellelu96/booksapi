@@ -1,6 +1,6 @@
 package com.michelle.booksapi.controllers;
 
-//import java.util.List;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,10 +24,10 @@ public class BookController {
 		return "show.jsp";
 	}
 	
-//	@GetMapping("/books")
-//	public String showAllBooks(Model model) {
-//		List<Book> books = bookService.allBooks();
-//		model.addAttribute("books",books);
-//		return "home.jsp";
-//	}
+	@GetMapping("/books")
+	public String showAllBooks(Model model) {
+		List<Book> books = bookService.allBooks();
+		model.addAttribute("books",books);
+		return "home.jsp";
+	}
 }

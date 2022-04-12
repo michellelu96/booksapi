@@ -5,9 +5,37 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<!-- for Bootstrap CSS -->
+<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
+<!-- YOUR own local CSS -->
+<link rel="stylesheet" href="/css/main.css"/>
+<!-- For any Bootstrap that uses JS or jQuery-->
+<script src="/webjars/jquery/jquery.min.js"></script>
+<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 <title>Insert title here</title>
 </head>
 <body>
+	<h1 class="text-center"> All Books</h1>
+	<table class="table-dark">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Title</th>
+      <th scope="col">Language</th>
+      <th scope="col"># of Pages</th>
+    </tr>
+  </thead>
+  <tbody>
+  <c:forEach var= "book" items ="${books}">
+    <tr>
+      <th scope="row">${book.id }</th>
+      <td>${book.title }</td>
+      <td>${book.language }</td>
+      <td>${book.numberOfPages }</td>
+    </tr>
+	</c:forEach>
 
+  </tbody>
+</table>
 </body>
 </html>
